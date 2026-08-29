@@ -138,6 +138,7 @@ except Exception as exc:
 
 
 @app.get("/health")
+@app.get("/healthz")
 def health() -> dict:
     return {
         "ok": True,
@@ -147,6 +148,9 @@ def health() -> dict:
         "locked_eight_unchanged": True,
         "locked_eight": LOCKED_EIGHT,
         "lambda": "CONJECTURE_1",
+        "lambda_status": "Conjecture 1",
+        "energy": None,
+        "signer": "UNSIGNED-honest",
         "mounted": MOUNTED,
         "mount_errors": MOUNT_ERRORS,
         "origins": {
