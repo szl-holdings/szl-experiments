@@ -39,60 +39,61 @@ button{background:var(--teal);color:#04140f;border:0;border-radius:8px;padding:6
     <a href="/api/v1/experiments/index">index</a>
     <a href="/api/v1/experiments/selftest">selftest</a>
   </nav>
+  <p class="note" id="mounts">mounts…</p>
   <div class="grid">
-    <section class="card"><h2>Allodial AI</h2>
+    <section class="card" data-lab="allodial"><h2>Allodial AI</h2>
       <p class="note">Research tab allodialai + sovereignty. SEAL + HHI. Not above the law.</p>
-      <button data-out="out-allodial" data-url="/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0">score SEAL-4</button>
-      <button data-out="out-allodial" data-url="/api/experiments/v1/allodial/noninterference?op=1,2,3&purged=1,2,3">non-interference</button>
-      <pre id="out-allodial">tap a probe</pre></section>
-    <section class="card"><h2>Neuroplasticity</h2>
+      <button data-lab="allodial" data-out="out-allodial" data-url="/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0">score SEAL-4</button>
+      <button data-lab="allodial" data-out="out-allodial" data-url="/api/experiments/v1/allodial/noninterference?op=1,2,3&purged=1,2,3">non-interference</button>
+      <pre id="out-allodial">probing…</pre></section>
+    <section class="card" data-lab="neuro"><h2>Neuroplasticity</h2>
       <p class="note">Research tab neuro. Hebb / Oja / BCM / STDP / EWC.</p>
-      <button data-out="out-neuro" data-url="/api/experiments/v1/neuro/oja">oja PCA</button>
-      <button data-out="out-neuro" data-url="/api/experiments/v1/neuro/plasticity?act=0.5,0.0,0.0001,0.8,0.0">dormant units</button>
-      <pre id="out-neuro">tap a probe</pre></section>
-    <section class="card"><h2>Chain of title</h2>
+      <button data-lab="neuro" data-out="out-neuro" data-url="/api/experiments/v1/neuro/oja">oja PCA</button>
+      <button data-lab="neuro" data-out="out-neuro" data-url="/api/experiments/v1/neuro/plasticity?act=0.5,0.0,0.0001,0.8,0.0">dormant units</button>
+      <pre id="out-neuro">probing…</pre></section>
+    <section class="card" data-lab="chain"><h2>Chain of title</h2>
       <p class="note">Research tab l6chain. L6 deed structure. UNSIGNED until signed.</p>
-      <button data-out="out-chain" data-url="/api/experiments/v1/chain/summary">summary</button>
-      <button data-out="out-chain" data-url="/api/experiments/v1/chain/levels">L1–L6</button>
-      <pre id="out-chain">tap a probe</pre></section>
-    <section class="card"><h2>Entanglement <span class="tag">was missing</span></h2>
+      <button data-lab="chain" data-out="out-chain" data-url="/api/experiments/v1/chain/summary">summary</button>
+      <button data-lab="chain" data-out="out-chain" data-url="/api/experiments/v1/chain/levels">L1–L6</button>
+      <pre id="out-chain">probing…</pre></section>
+    <section class="card" data-lab="entangle"><h2>Entanglement <span class="tag">was missing</span></h2>
       <p class="note">Research tab entangle. Bell vs product. Capacity bound is PROPOSED, not Λ.</p>
-      <button data-out="out-ent" data-url="/api/experiments/v1/entangle/concurrence?state=bell">concurrence Bell</button>
-      <button data-out="out-ent" data-url="/api/experiments/v1/entangle/chsh">CHSH</button>
-      <pre id="out-ent">tap a probe</pre></section>
-    <section class="card"><h2>Metabolic scaling <span class="tag">was missing</span></h2>
+      <button data-lab="entangle" data-out="out-ent" data-url="/api/experiments/v1/entangle/concurrence?state=bell">concurrence Bell</button>
+      <button data-lab="entangle" data-out="out-ent" data-url="/api/experiments/v1/entangle/chsh">CHSH</button>
+      <pre id="out-ent">probing…</pre></section>
+    <section class="card" data-lab="scaling"><h2>Metabolic scaling <span class="tag">was missing</span></h2>
       <p class="note">Research tab scaling. Kleiber 1932. Φ is PROPOSED, not formal Λ.</p>
-      <button data-out="out-scale" data-url="/api/experiments/v1/scaling/kleiber?M=70">Kleiber 70kg</button>
-      <button data-out="out-scale" data-url="/api/experiments/v1/scaling/heart?M=70">heart / lifespan</button>
-      <pre id="out-scale">tap a probe</pre></section>
-    <section class="card"><h2>Restraint <span class="tag">deleted nav</span></h2>
+      <button data-lab="scaling" data-out="out-scale" data-url="/api/experiments/v1/scaling/kleiber?M=70">Kleiber 70kg</button>
+      <button data-lab="scaling" data-out="out-scale" data-url="/api/experiments/v1/scaling/heart?M=70">heart / lifespan</button>
+      <pre id="out-scale">probing…</pre></section>
+    <section class="card" data-lab="restraint"><h2>Restraint <span class="tag">deleted nav</span></h2>
       <p class="note">/restraint was a dead SPA shell. Real ladder lives here.</p>
-      <button data-out="out-rest" data-url="/api/experiments/v1/restraint/info">info</button>
-      <pre id="out-rest">tap a probe</pre></section>
-    <section class="card"><h2>SAPA <span class="tag">deleted nav</span></h2>
+      <button data-lab="restraint" data-out="out-rest" data-url="/api/experiments/v1/restraint/info">info</button>
+      <pre id="out-rest">probing…</pre></section>
+    <section class="card" data-lab="sapa"><h2>SAPA <span class="tag">deleted nav</span></h2>
       <p class="note">/sapa had no dedicated page. Joules per successful goal — fail-closed.</p>
-      <button data-out="out-sapa" data-url="/api/experiments/v1/sapa/summary">summary</button>
-      <pre id="out-sapa">tap a probe</pre></section>
-    <section class="card"><h2>Unified formulas</h2>
+      <button data-lab="sapa" data-out="out-sapa" data-url="/api/experiments/v1/sapa/summary">summary</button>
+      <pre id="out-sapa">probing…</pre></section>
+    <section class="card" data-lab="unified"><h2>Unified formulas</h2>
       <p class="note">Thesis v6 borrowed structure. PROPOSED / ANALOGY, not locked-8.</p>
-      <button data-out="out-uni" data-url="/api/experiments/v1/unified/summary">summary</button>
-      <pre id="out-uni">tap a probe</pre></section>
-    <section class="card"><h2>C-UAS formulas</h2>
+      <button data-lab="unified" data-out="out-uni" data-url="/api/experiments/v1/unified/summary">summary</button>
+      <pre id="out-uni">probing…</pre></section>
+    <section class="card" data-lab="cuas"><h2>C-UAS formulas</h2>
       <p class="note">Engageability / fusion / WTA. Effector is SIMULATED. Never actuates.</p>
-      <button data-out="out-cuas" data-url="/api/experiments/v1/cuas/summary">summary</button>
-      <pre id="out-cuas">tap a probe</pre></section>
-    <section class="card"><h2>Neuromorphic</h2>
+      <button data-lab="cuas" data-out="out-cuas" data-url="/api/experiments/v1/cuas/summary">summary</button>
+      <pre id="out-cuas">probing…</pre></section>
+    <section class="card" data-lab="neuromorphic"><h2>Neuromorphic</h2>
       <p class="note">LIF spike population. MODELED, not a neuromorphic chip.</p>
-      <button data-out="out-nm" data-url="/api/experiments/v1/neuromorphic/spikes">spikes</button>
-      <pre id="out-nm">tap a probe</pre></section>
-    <section class="card"><h2>Quantum bio</h2>
+      <button data-lab="neuromorphic" data-out="out-nm" data-url="/api/experiments/v1/neuromorphic/spikes">spikes</button>
+      <pre id="out-nm">probing…</pre></section>
+    <section class="card" data-lab="qbio"><h2>Quantum bio</h2>
       <p class="note">PMF / coherence / compass. Cited, experimental.</p>
-      <button data-out="out-qb" data-url="/api/experiments/v1/qbio/summary">summary</button>
-      <pre id="out-qb">tap a probe</pre></section>
-    <section class="card"><h2>Conjecture factory</h2>
+      <button data-lab="qbio" data-out="out-qb" data-url="/api/experiments/v1/qbio/summary">summary</button>
+      <pre id="out-qb">probing…</pre></section>
+    <section class="card" data-lab="conjecture-factory"><h2>Conjecture factory</h2>
       <p class="note">Open conjectures as a lab, never promoted to theorems here.</p>
-      <button data-out="out-cf" data-url="/api/experiments/v1/conjecture-factory">bundle</button>
-      <pre id="out-cf">tap a probe</pre></section>
+      <button data-lab="conjecture-factory" data-out="out-cf" data-url="/api/experiments/v1/conjecture-factory">bundle</button>
+      <pre id="out-cf">probing…</pre></section>
   </div>
 </main>
 <script>
@@ -101,13 +102,39 @@ async function probe(url, id){
   el.textContent = "…";
   try{
     const r = await fetch(url);
-    const d = await r.json();
+    let d = null;
+    try{ d = await r.json(); }catch(e){ d = {error: "non-JSON body"}; }
+    if (!r.ok){
+      el.textContent = "UNAVAILABLE http=" + r.status + "\n" + JSON.stringify(d, null, 2);
+      return;
+    }
     el.textContent = JSON.stringify(d, null, 2);
-  }catch(e){ el.textContent = String(e); }
+  }catch(e){ el.textContent = "UNAVAILABLE " + String(e); }
 }
 document.querySelectorAll("button[data-url]").forEach(b=>{
   b.onclick = () => probe(b.getAttribute("data-url"), b.getAttribute("data-out"));
 });
+(async function boot(){
+  const mounts = document.getElementById("mounts");
+  try{
+    const r = await fetch("/health");
+    const d = await r.json();
+    if (!r.ok){ mounts.textContent = "UNAVAILABLE http=" + r.status; }
+    else {
+      const err = d.mount_errors || {};
+      const dead = Object.keys(err);
+      mounts.textContent = "mounted: " + (d.mounted||[]).join(", ") +
+        (dead.length ? " · UNAVAILABLE " + dead.join(", ") : "");
+    }
+  }catch(e){ mounts.textContent = "UNAVAILABLE " + String(e); }
+  const seen = new Set();
+  document.querySelectorAll("button[data-url]").forEach(b=>{
+    const id = b.getAttribute("data-out");
+    if (seen.has(id)) return;
+    seen.add(id);
+    probe(b.getAttribute("data-url"), id);
+  });
+})();
 const cv=document.getElementById("holo"), ctx=cv.getContext("2d"); let rot=0;
 function resize(){cv.width=innerWidth*devicePixelRatio; cv.height=innerHeight*devicePixelRatio;}
 addEventListener("resize", resize); resize();

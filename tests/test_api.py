@@ -19,6 +19,12 @@ def test_health_mounts_research_tabs() -> None:
         assert name in mounted, (name, body.get("mount_errors"))
 
 
+LABS = (
+    "allodial", "neuro", "chain", "entangle", "scaling", "restraint",
+    "sapa", "unified", "cuas", "neuromorphic", "qbio", "conjecture-factory",
+)
+
+
 def test_chamber_lists_missing_tabs() -> None:
     page = c.get("/")
     assert page.status_code == 200
@@ -27,6 +33,27 @@ def test_chamber_lists_missing_tabs() -> None:
     assert "Metabolic scaling" in text
     assert "SAPA" in text
     assert "Restraint" in text
+    for lab in LABS:
+        assert f'data-lab="{lab}"' in text, lab
+    assert "UNAVAILABLE" in text
+    assert "three.js" not in text.lower()
+    assert "cdn.jsdelivr" not in text.lower()
+    assert 'id="mounts"' in text
+    for url in (
+        "/api/experiments/v1/allodial/score",
+        "/api/experiments/v1/neuro/oja",
+        "/api/experiments/v1/chain/summary",
+        "/api/experiments/v1/entangle/concurrence",
+        "/api/experiments/v1/scaling/kleiber",
+        "/api/experiments/v1/restraint/info",
+        "/api/experiments/v1/sapa/summary",
+        "/api/experiments/v1/unified/summary",
+        "/api/experiments/v1/cuas/summary",
+        "/api/experiments/v1/neuromorphic/spikes",
+        "/api/experiments/v1/qbio/summary",
+        "/api/experiments/v1/conjecture-factory",
+    ):
+        assert url in text, url
 
 
 def test_entangle_and_kleiber() -> None:
@@ -52,3 +79,25 @@ def test_index_names_restored() -> None:
     assert ids == {"neuro", "sovereignty", "allodialai", "l6chain", "entangle", "scaling"}
     restored = {t["id"] for t in body["restored_deleted_tabs"]}
     assert restored == {"restraint", "sapa"}
+
+
+def test_every_restored_lab_endpoint_answers() -> None:
+    probes = (
+        "/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0",
+        "/api/experiments/v1/neuro/oja",
+        "/api/experiments/v1/chain/summary",
+        "/api/experiments/v1/entangle/concurrence?state=bell",
+        "/api/experiments/v1/scaling/kleiber?M=70",
+        "/api/experiments/v1/restraint/info",
+        "/api/experiments/v1/sapa/summary",
+        "/api/experiments/v1/unified/summary",
+        "/api/experiments/v1/cuas/summary",
+        "/api/experiments/v1/neuromorphic/spikes",
+        "/api/experiments/v1/qbio/summary",
+        "/api/experiments/v1/conjecture-factory",
+    )
+    for path in probes:
+        res = c.get(path)
+        assert res.status_code == 200, (path, res.status_code, res.text[:240])
+        body = res.json()
+        assert isinstance(body, dict), path
