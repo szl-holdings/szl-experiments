@@ -82,6 +82,5 @@ jobs:
       - name: Mirror szl-khipu package + Space
         env:
           HF_TOKEN: ${{ secrets.HF_ORG_TOKEN || secrets.HF_TOKEN }}
-        run: |
-          python szl-khipu/scripts/publish_hf.py
         working-directory: szl-khipu
+        run: python scripts/publish_hf.py
