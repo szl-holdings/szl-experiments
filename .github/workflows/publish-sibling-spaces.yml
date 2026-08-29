@@ -1,0 +1,87 @@
+# Copyright 2026 SZL Holdings — SPDX-License-Identifier: Apache-2.0
+name: publish-sibling-spaces
+# Temporary estate mirror: this repo holds HF_TOKEN. Publish GitHub-canonical
+# siblings whose own repos do not yet have the secret. GitHub remains source.
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-sibling-spaces.yml
+jobs:
+  khipu-lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: szl-holdings/khipu-lab
+          path: khipu-lab
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: pip install huggingface_hub
+      - name: Publish SZLHOLDINGS/khipu-lab
+        env:
+          HF_TOKEN: ${{ secrets.HF_ORG_TOKEN || secrets.HF_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          token = os.environ.get("HF_TOKEN") or ""
+          if not token:
+              print("HF_TOKEN UNAVAILABLE — skip khipu-lab. Not fabricated LIVE.")
+              sys.exit(0)
+          from huggingface_hub import HfApi, create_repo
+          api = HfApi(token=token)
+          create_repo("SZLHOLDINGS/khipu-lab", repo_type="space", space_sdk="docker", exist_ok=True, token=token)
+          api.upload_folder(folder_path="khipu-lab", repo_id="SZLHOLDINGS/khipu-lab", repo_type="space",
+                            ignore_patterns=[".git*", "node_modules/*", ".venv/*"])
+          print("published SZLHOLDINGS/khipu-lab")
+          PY
+  counsel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: szl-holdings/counsel
+          path: counsel
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: pip install huggingface_hub
+      - name: Publish SZLHOLDINGS/counsel
+        env:
+          HF_TOKEN: ${{ secrets.HF_ORG_TOKEN || secrets.HF_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          token = os.environ.get("HF_TOKEN") or ""
+          if not token:
+              print("HF_TOKEN UNAVAILABLE — skip counsel. Not fabricated LIVE.")
+              sys.exit(0)
+          from huggingface_hub import HfApi, create_repo
+          api = HfApi(token=token)
+          create_repo("SZLHOLDINGS/counsel", repo_type="space", space_sdk="gradio", exist_ok=True, token=token)
+          api.upload_folder(folder_path="counsel", repo_id="SZLHOLDINGS/counsel", repo_type="space",
+                            ignore_patterns=[".git*", "tests/*", ".venv/*", "__pycache__/*"])
+          print("published SZLHOLDINGS/counsel")
+          PY
+  szl-khipu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: szl-holdings/szl-khipu
+          path: szl-khipu
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: pip install huggingface_hub
+      - name: Mirror szl-khipu package + Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_ORG_TOKEN || secrets.HF_TOKEN }}
+        run: |
+          python szl-khipu/scripts/publish_hf.py
+        working-directory: szl-khipu
