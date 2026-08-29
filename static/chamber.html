@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SZL Experiments — Allodial · Neuroplasticity · Chain of title</title>
+<meta name="description" content="Operational experimental tier. Not locked-8. Λ = Conjecture 1."/>
+<style>
+:root{--void:#05070d;--panel:rgba(10,16,24,.86);--line:#1c2a38;--teal:#3af4c8;--gold:#e8c074;--cream:#eef3f6;--dim:#90a4b6}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--void);color:var(--cream);font:14px/1.5 ui-sans-serif,system-ui,Segoe UI,Roboto,Arial}
+body{min-height:100vh}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:28px 18px 64px}
+.banner{font:11px ui-monospace,monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold)}
+h1{margin:6px 0 8px;color:var(--teal);font-size:clamp(26px,5vw,40px)}
+.lede{color:var(--dim);max-width:68ch}
+.links a{color:var(--teal);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:0 6px 8px 0;display:inline-block;font:12px ui-monospace,monospace;background:var(--panel)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;backdrop-filter:blur(8px)}
+.card h2{margin:0 0 8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+pre{white-space:pre-wrap;font:12px ui-monospace,monospace;color:#cfe7df;background:#071018;padding:10px;border-radius:8px;border:1px solid var(--line);min-height:120px}
+button{background:var(--teal);color:#04140f;border:0;border-radius:8px;padding:7px 12px;font-weight:700;cursor:pointer;margin-right:6px}
+.note{color:var(--dim);font-size:12px}
+</style>
+</head>
+<body>
+<canvas id="holo"></canvas>
+<main class="wrap">
+  <div class="banner">EXPERIMENTAL · not locked-8 · Λ = Conjecture 1</div>
+  <h1>Experiments lab</h1>
+  <p class="lede">The a-11-oy.com experimental surfaces — Allodial AI, neuroplasticity, chain of title — running here as real Python, not nav placeholders. They stay EXPERIMENTAL. They do not join the locked eight formulas.</p>
+  <nav class="links">
+    <a href="https://a-11-oy.com">a-11-oy.com</a>
+    <a href="https://github.com/szl-holdings/szl-experiments">GitHub</a>
+    <a href="https://huggingface.co/spaces/SZLHOLDINGS/experiments">HF Space</a>
+    <a href="/health">health</a>
+    <a href="/api/v1/experiments/index">index</a>
+  </nav>
+  <div class="grid">
+    <section class="card">
+      <h2>Allodial AI</h2>
+      <p class="note">Sovereignty score from EU SEAL + HHI. Not above the law.</p>
+      <button data-url="/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0">score SEAL-4</button>
+      <button data-url="/api/experiments/v1/allodial/noninterference?op=1,2,3&purged=1,2,3">non-interference</button>
+      <pre id="out-allodial">tap a probe</pre>
+    </section>
+    <section class="card">
+      <h2>Neuroplasticity</h2>
+      <p class="note">Hebb / Oja / BCM / STDP / EWC — cited, runnable, stdlib.</p>
+      <button data-url="/api/experiments/v1/neuro/oja">oja PCA</button>
+      <button data-url="/api/experiments/v1/neuro/plasticity?act=0.5,0.0,0.0001,0.8,0.0">dormant units</button>
+      <pre id="out-neuro">tap a probe</pre>
+    </section>
+    <section class="card">
+      <h2>Chain of title</h2>
+      <p class="note">L6 deed structure. UNSIGNED until a signer is injected.</p>
+      <button data-url="/api/experiments/v1/chain/summary">summary</button>
+      <button data-url="/api/experiments/v1/chain/levels">L1–L6</button>
+      <pre id="out-chain">tap a probe</pre>
+    </section>
+  </div>
+</main>
+<script>
+async function probe(url, id){
+  const el = document.getElementById(id);
+  el.textContent = "…";
+  try{
+    const r = await fetch(url);
+    const d = await r.json();
+    el.textContent = JSON.stringify(d, null, 2);
+  }catch(e){ el.textContent = String(e); }
+}
+document.querySelectorAll("button[data-url]").forEach(b=>{
+  b.onclick = () => {
+    const url = b.getAttribute("data-url");
+    const id = url.includes("allodial") ? "out-allodial" : url.includes("neuro") ? "out-neuro" : "out-chain";
+    probe(url, id);
+  };
+});
+const cv=document.getElementById("holo"), ctx=cv.getContext("2d"); let rot=0;
+function resize(){cv.width=innerWidth*devicePixelRatio; cv.height=innerHeight*devicePixelRatio;}
+addEventListener("resize", resize); resize();
+function frame(){
+  const w=cv.width,h=cv.height; ctx.fillStyle="#05070d"; ctx.fillRect(0,0,w,h);
+  const g=ctx.createRadialGradient(w*0.75,h*0.3,20,w*0.7,h*0.35,Math.max(w,h)*0.55);
+  g.addColorStop(0,"rgba(58,244,200,.08)"); g.addColorStop(1,"rgba(5,7,13,0)");
+  ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+  rot+=0.004; ctx.save(); ctx.globalCompositeOperation="lighter";
+  ctx.strokeStyle="rgba(232,192,116,.45)"; ctx.beginPath();
+  for(let i=0;i<=180;i++){
+    const t=i/180*Math.PI*2, R=0.7, r=0.26;
+    const x=(R+r*Math.cos(2*t))*Math.cos(3*t), y=r*Math.sin(2*t), z=(R+r*Math.cos(2*t))*Math.sin(3*t);
+    const c=Math.cos(rot), s=Math.sin(rot), x2=x*c-z*s, z2=x*s+z*c, f=2.4/(4+z2);
+    const px=w*0.78+x2*f*w*0.14, py=h*0.28+y*f*h*0.18;
+    i?ctx.lineTo(px,py):ctx.moveTo(px,py);
+  }
+  ctx.stroke(); ctx.restore(); requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
