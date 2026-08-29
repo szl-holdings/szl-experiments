@@ -3,62 +3,96 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>SZL Experiments — Allodial · Neuroplasticity · Chain of title</title>
-<meta name="description" content="Operational experimental tier. Not locked-8. Λ = Conjecture 1."/>
+<title>SZL Experiments — restored experimental tabs</title>
+<meta name="description" content="Every a-11-oy.com Research (Experimental) tab plus deleted /restraint and /sapa, running as real Python. Not locked-8. Λ = Conjecture 1."/>
 <style>
-:root{--void:#05070d;--panel:rgba(10,16,24,.86);--line:#1c2a38;--teal:#3af4c8;--gold:#e8c074;--cream:#eef3f6;--dim:#90a4b6}
+:root{--void:#05070d;--panel:rgba(10,16,24,.88);--line:#1c2a38;--teal:#3af4c8;--gold:#e8c074;--cream:#eef3f6;--dim:#90a4b6;--rose:#ff7a9c}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--void);color:var(--cream);font:14px/1.5 ui-sans-serif,system-ui,Segoe UI,Roboto,Arial}
 body{min-height:100vh}
 canvas{position:fixed;inset:0;width:100%;height:100%}
-.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:28px 18px 64px}
+.wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:24px 16px 72px}
 .banner{font:11px ui-monospace,monospace;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold)}
-h1{margin:6px 0 8px;color:var(--teal);font-size:clamp(26px,5vw,40px)}
-.lede{color:var(--dim);max-width:68ch}
+h1{margin:6px 0 8px;color:var(--teal);font-size:clamp(24px,4.5vw,38px)}
+.lede{color:var(--dim);max-width:78ch}
 .links a{color:var(--teal);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px;margin:0 6px 8px 0;display:inline-block;font:12px ui-monospace,monospace;background:var(--panel)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:16px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;backdrop-filter:blur(8px)}
-.card h2{margin:0 0 8px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-pre{white-space:pre-wrap;font:12px ui-monospace,monospace;color:#cfe7df;background:#071018;padding:10px;border-radius:8px;border:1px solid var(--line);min-height:120px}
-button{background:var(--teal);color:#04140f;border:0;border-radius:8px;padding:7px 12px;font-weight:700;cursor:pointer;margin-right:6px}
-.note{color:var(--dim);font-size:12px}
+.card h2{margin:0 0 6px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.tag{font:10px ui-monospace,monospace;border:1px solid var(--line);border-radius:999px;padding:1px 7px;color:var(--rose);margin-left:6px}
+pre{white-space:pre-wrap;font:11.5px ui-monospace,monospace;color:#cfe7df;background:#071018;padding:9px;border-radius:8px;border:1px solid var(--line);min-height:88px;max-height:220px;overflow:auto}
+button{background:var(--teal);color:#04140f;border:0;border-radius:8px;padding:6px 10px;font-weight:700;cursor:pointer;margin:0 6px 8px 0}
+.note{color:var(--dim);font-size:12px;margin:0 0 8px}
 </style>
 </head>
 <body>
 <canvas id="holo"></canvas>
 <main class="wrap">
-  <div class="banner">EXPERIMENTAL · not locked-8 · Λ = Conjecture 1</div>
+  <div class="banner">EXPERIMENTAL · restored deleted tabs · not locked-8 · Λ = Conjecture 1</div>
   <h1>Experiments lab</h1>
-  <p class="lede">The a-11-oy.com experimental surfaces — Allodial AI, neuroplasticity, chain of title — running here as real Python, not nav placeholders. They stay EXPERIMENTAL. They do not join the locked eight formulas.</p>
+  <p class="lede">The console’s <b>Research (Experimental)</b> group is six tabs. Three were missing from this Space. Two more were deleted from a-11-oy.com nav because they were empty SPA shells. They all run here as real Python.</p>
   <nav class="links">
-    <a href="https://a-11-oy.com">a-11-oy.com</a>
+    <a href="https://a-11-oy.com/console">a-11-oy.com console</a>
     <a href="https://github.com/szl-holdings/szl-experiments">GitHub</a>
     <a href="https://huggingface.co/spaces/SZLHOLDINGS/experiments">HF Space</a>
     <a href="/health">health</a>
     <a href="/api/v1/experiments/index">index</a>
+    <a href="/api/v1/experiments/selftest">selftest</a>
   </nav>
   <div class="grid">
-    <section class="card">
-      <h2>Allodial AI</h2>
-      <p class="note">Sovereignty score from EU SEAL + HHI. Not above the law.</p>
-      <button data-url="/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0">score SEAL-4</button>
-      <button data-url="/api/experiments/v1/allodial/noninterference?op=1,2,3&purged=1,2,3">non-interference</button>
-      <pre id="out-allodial">tap a probe</pre>
-    </section>
-    <section class="card">
-      <h2>Neuroplasticity</h2>
-      <p class="note">Hebb / Oja / BCM / STDP / EWC — cited, runnable, stdlib.</p>
-      <button data-url="/api/experiments/v1/neuro/oja">oja PCA</button>
-      <button data-url="/api/experiments/v1/neuro/plasticity?act=0.5,0.0,0.0001,0.8,0.0">dormant units</button>
-      <pre id="out-neuro">tap a probe</pre>
-    </section>
-    <section class="card">
-      <h2>Chain of title</h2>
-      <p class="note">L6 deed structure. UNSIGNED until a signer is injected.</p>
-      <button data-url="/api/experiments/v1/chain/summary">summary</button>
-      <button data-url="/api/experiments/v1/chain/levels">L1–L6</button>
-      <pre id="out-chain">tap a probe</pre>
-    </section>
+    <section class="card"><h2>Allodial AI</h2>
+      <p class="note">Research tab allodialai + sovereignty. SEAL + HHI. Not above the law.</p>
+      <button data-out="out-allodial" data-url="/api/experiments/v1/allodial/score?seals=4,4,4,4,4&dep=0">score SEAL-4</button>
+      <button data-out="out-allodial" data-url="/api/experiments/v1/allodial/noninterference?op=1,2,3&purged=1,2,3">non-interference</button>
+      <pre id="out-allodial">tap a probe</pre></section>
+    <section class="card"><h2>Neuroplasticity</h2>
+      <p class="note">Research tab neuro. Hebb / Oja / BCM / STDP / EWC.</p>
+      <button data-out="out-neuro" data-url="/api/experiments/v1/neuro/oja">oja PCA</button>
+      <button data-out="out-neuro" data-url="/api/experiments/v1/neuro/plasticity?act=0.5,0.0,0.0001,0.8,0.0">dormant units</button>
+      <pre id="out-neuro">tap a probe</pre></section>
+    <section class="card"><h2>Chain of title</h2>
+      <p class="note">Research tab l6chain. L6 deed structure. UNSIGNED until signed.</p>
+      <button data-out="out-chain" data-url="/api/experiments/v1/chain/summary">summary</button>
+      <button data-out="out-chain" data-url="/api/experiments/v1/chain/levels">L1–L6</button>
+      <pre id="out-chain">tap a probe</pre></section>
+    <section class="card"><h2>Entanglement <span class="tag">was missing</span></h2>
+      <p class="note">Research tab entangle. Bell vs product. Capacity bound is PROPOSED, not Λ.</p>
+      <button data-out="out-ent" data-url="/api/experiments/v1/entangle/concurrence?state=bell">concurrence Bell</button>
+      <button data-out="out-ent" data-url="/api/experiments/v1/entangle/chsh">CHSH</button>
+      <pre id="out-ent">tap a probe</pre></section>
+    <section class="card"><h2>Metabolic scaling <span class="tag">was missing</span></h2>
+      <p class="note">Research tab scaling. Kleiber 1932. Φ is PROPOSED, not formal Λ.</p>
+      <button data-out="out-scale" data-url="/api/experiments/v1/scaling/kleiber?M=70">Kleiber 70kg</button>
+      <button data-out="out-scale" data-url="/api/experiments/v1/scaling/heart?M=70">heart / lifespan</button>
+      <pre id="out-scale">tap a probe</pre></section>
+    <section class="card"><h2>Restraint <span class="tag">deleted nav</span></h2>
+      <p class="note">/restraint was a dead SPA shell. Real ladder lives here.</p>
+      <button data-out="out-rest" data-url="/api/experiments/v1/restraint/info">info</button>
+      <pre id="out-rest">tap a probe</pre></section>
+    <section class="card"><h2>SAPA <span class="tag">deleted nav</span></h2>
+      <p class="note">/sapa had no dedicated page. Joules per successful goal — fail-closed.</p>
+      <button data-out="out-sapa" data-url="/api/experiments/v1/sapa/summary">summary</button>
+      <pre id="out-sapa">tap a probe</pre></section>
+    <section class="card"><h2>Unified formulas</h2>
+      <p class="note">Thesis v6 borrowed structure. PROPOSED / ANALOGY, not locked-8.</p>
+      <button data-out="out-uni" data-url="/api/experiments/v1/unified/summary">summary</button>
+      <pre id="out-uni">tap a probe</pre></section>
+    <section class="card"><h2>C-UAS formulas</h2>
+      <p class="note">Engageability / fusion / WTA. Effector is SIMULATED. Never actuates.</p>
+      <button data-out="out-cuas" data-url="/api/experiments/v1/cuas/summary">summary</button>
+      <pre id="out-cuas">tap a probe</pre></section>
+    <section class="card"><h2>Neuromorphic</h2>
+      <p class="note">LIF spike population. MODELED, not a neuromorphic chip.</p>
+      <button data-out="out-nm" data-url="/api/experiments/v1/neuromorphic/spikes">spikes</button>
+      <pre id="out-nm">tap a probe</pre></section>
+    <section class="card"><h2>Quantum bio</h2>
+      <p class="note">PMF / coherence / compass. Cited, experimental.</p>
+      <button data-out="out-qb" data-url="/api/experiments/v1/qbio/summary">summary</button>
+      <pre id="out-qb">tap a probe</pre></section>
+    <section class="card"><h2>Conjecture factory</h2>
+      <p class="note">Open conjectures as a lab, never promoted to theorems here.</p>
+      <button data-out="out-cf" data-url="/api/experiments/v1/conjecture-factory">bundle</button>
+      <pre id="out-cf">tap a probe</pre></section>
   </div>
 </main>
 <script>
@@ -72,27 +106,23 @@ async function probe(url, id){
   }catch(e){ el.textContent = String(e); }
 }
 document.querySelectorAll("button[data-url]").forEach(b=>{
-  b.onclick = () => {
-    const url = b.getAttribute("data-url");
-    const id = url.includes("allodial") ? "out-allodial" : url.includes("neuro") ? "out-neuro" : "out-chain";
-    probe(url, id);
-  };
+  b.onclick = () => probe(b.getAttribute("data-url"), b.getAttribute("data-out"));
 });
 const cv=document.getElementById("holo"), ctx=cv.getContext("2d"); let rot=0;
 function resize(){cv.width=innerWidth*devicePixelRatio; cv.height=innerHeight*devicePixelRatio;}
 addEventListener("resize", resize); resize();
 function frame(){
   const w=cv.width,h=cv.height; ctx.fillStyle="#05070d"; ctx.fillRect(0,0,w,h);
-  const g=ctx.createRadialGradient(w*0.75,h*0.3,20,w*0.7,h*0.35,Math.max(w,h)*0.55);
-  g.addColorStop(0,"rgba(58,244,200,.08)"); g.addColorStop(1,"rgba(5,7,13,0)");
+  const g=ctx.createRadialGradient(w*0.78,h*0.22,16,w*0.7,h*0.3,Math.max(w,h)*0.5);
+  g.addColorStop(0,"rgba(58,244,200,.07)"); g.addColorStop(1,"rgba(5,7,13,0)");
   ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
-  rot+=0.004; ctx.save(); ctx.globalCompositeOperation="lighter";
-  ctx.strokeStyle="rgba(232,192,116,.45)"; ctx.beginPath();
+  rot+=0.0035; ctx.save(); ctx.globalCompositeOperation="lighter";
+  ctx.strokeStyle="rgba(232,192,116,.4)"; ctx.beginPath();
   for(let i=0;i<=180;i++){
-    const t=i/180*Math.PI*2, R=0.7, r=0.26;
+    const t=i/180*Math.PI*2, R=0.68, r=0.24;
     const x=(R+r*Math.cos(2*t))*Math.cos(3*t), y=r*Math.sin(2*t), z=(R+r*Math.cos(2*t))*Math.sin(3*t);
     const c=Math.cos(rot), s=Math.sin(rot), x2=x*c-z*s, z2=x*s+z*c, f=2.4/(4+z2);
-    const px=w*0.78+x2*f*w*0.14, py=h*0.28+y*f*h*0.18;
+    const px=w*0.82+x2*f*w*0.12, py=h*0.2+y*f*h*0.16;
     i?ctx.lineTo(px,py):ctx.moveTo(px,py);
   }
   ctx.stroke(); ctx.restore(); requestAnimationFrame(frame);
